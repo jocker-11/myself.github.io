@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins" ,sans-serif;
+}
+body{
+    background-color:azure ;
+}
+:root{
+    --bg-color:#000000;
+    --secound-bg-color:#131313;
+    --text-color:white;
+    --main-color:#34cceb;
+}
+
+.education{
+    padding: 50px 15px;
+}
+.education h2{
+    margin-bottom: 5rem;
+}
+.heading{
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+.timeline-items{
+    max-width: 1200px; /*保持自己的「最大寬度」 */
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.timeline-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: var(--main-color);
+    left: calc(50% - 1px);
+}
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+    /* background: red; */
+}
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px) ;
+    border: 50%;
+    top: 10px;
+}
+.timeline-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    margin: 6px 0 15px;
+}
+.timeline-content{
+    background: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 30px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+video{
+    width: 100%;
+}
+.timeline-content:hover{
+    transform: scale(1.5); /* 水平和垂直方向上都放大 1.05 倍，即 105% */
+    box-shadow: 0 0 25px var(--main-color);
+}
+.timeline-content h3{
+    font-size: 20px;
+    color: #fff;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+.timeline-content p{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: left;
+}
+@media (max-width: 991px) {
+    html{
+        font-size: 50%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .timeline-item::before{
+        left: 7px;
+    }
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd) , .timeline-item:nth-child(even){
+        padding-left: 37px;
+    }
+    .timeline-dot{
+        left: 0;
+    }
+}
+@media (max-width: 500px) {
+    .education .heading {
+        font-size: 5rem;
+    }
+    .services .heading{
+        font-size: 5rem;
+    }
+    .testimonials .heading{
+        font-size: 5rem;
+    }
+    .contact .heading{
+        font-size: 5rem;
+    }
+}
